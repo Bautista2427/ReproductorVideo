@@ -9,7 +9,11 @@ public class Fachada {
     public Fachada() {
     }
 
-    public String obtenerCodec(String texto) {
+    public static String obtenerCodec(String texto) {
+        int index = texto.indexOf('.');
+        if (index != -1) {
+            return texto.substring(index);
+        }
         return "";
     }
 
@@ -21,4 +25,6 @@ public class Fachada {
         mensaje+="\n"+videoPlayer.play(texto);
         return mensaje;
     }
+
+
 }
